@@ -142,21 +142,7 @@ public class FakeStoreProductImpl implements ProductService{
 
     @Override
     public Product replaceProduct(Long productId, Product product) {
-       /* RestTemplate restTemplate=restTemplateBuilder.build();
-        FakeStoreProductDTO fakeStoreProductDTO=new FakeStoreProductDTO();
-        fakeStoreProductDTO.setDescription(product.getDescription());
-        fakeStoreProductDTO.setPrice(product.getPrice());
-        fakeStoreProductDTO.setTitle(product.getTitle());
-        fakeStoreProductDTO.setImage(product.getImageUrl());
-        fakeStoreProductDTO.setCategory(product.getCategory().getName());
-        ResponseEntity<FakeStoreProductDTO> res=requestForEntity(
-                HttpMethod.PUT,
-                "https://fakestoreapi.com/products/{id}",
-                fakeStoreProductDTO,
-                FakeStoreProductDTO.class,
-                productId
-
-        );*/
+ 
         FakeStoreProductDTO fakeStoreProductDTOResponse=fakeStoreClient.replaceProduct(productId,product);
         return convertFakeStoreProductDtoToProduct(fakeStoreProductDTOResponse);
 

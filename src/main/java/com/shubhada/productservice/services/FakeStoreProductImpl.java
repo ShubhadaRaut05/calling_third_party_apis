@@ -111,31 +111,8 @@ public class FakeStoreProductImpl implements ProductService{
     //Patch for Object API
     @Override
     public Product updateProduct(Long productId, Product product) {
-      /*RestTemplate restTemplate=restTemplateBuilder.build();*/
-       /* RestTemplate restTemplate=restTemplateBuilder.requestFactory(
-                HttpComponentsClientHttpRequestFactory.class
-        ).build();*/
-      /*FakeStoreProductDTO fakeStoreProductDTO=new FakeStoreProductDTO();
-      fakeStoreProductDTO.setDescription(product.getDescription());
-      fakeStoreProductDTO.setImage(product.getImageUrl());
-      fakeStoreProductDTO.setPrice(product.getPrice());
-      fakeStoreProductDTO.setTitle(product.getTitle());
-      fakeStoreProductDTO.setCategory(product.getCategory().getName());*/
-    /*ResponseEntity<FakeStoreProductDTO> response=  requestForEntity(
-        HttpMethod.PATCH,
-              "https://fakestoreapi.com/products/{id}",
-              fakeStoreProductDTO,//requsetBody
-            FakeStoreProductDTO.class,
-              productId
 
-      );*/
-     /* FakeStoreProductDTO fakeStoreProductDTOResponse=restTemplate.patchForObject(
-              "https://fakestoreapi.com/products/{id}",
-              fakeStoreProductDTO,
-              FakeStoreProductDTO.class,
-              productId
-      );*/
-       /* return convertFakeStoreProductDtoToProduct(response.getBody());*/
+   
         FakeStoreProductDTO fakeStoreProductDTOResponse=fakeStoreClient.updateProduct(productId,product);
         return convertFakeStoreProductDtoToProduct(fakeStoreProductDTOResponse);
     }
